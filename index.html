@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rebeccapurple;
+            color: #fff;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px 0;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: relative;
+            z-index: 1;
+            margin-bottom: -20px; /* Pull the header up slightly */
+        }
+        .header-logo img {
+    width: 50px;
+    height: auto;
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #38E5ED;
+            text-decoration: none;
+            transition: color 0.3s; /* Add a smooth transition effect */
+        }
+
+        nav ul li a:hover {
+            color: blue; /* Change the color on hover */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intro {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .image-container img {
+            width: 100%; /* Adjust the width of the image to fit its container */
+            max-width: 400px; /* Set a maximum width for the image */
+            display: block; /* Ensure the image is displayed as a block element */
+            margin: 0 auto; /* Center the image horizontally */
+            border: none;
+        }
+
+        .download-btn {
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background-color: #2980b9; /* Darker color on hover */
+            color: #fff;
+        }
+
+        #home {
+            padding: 50px 0;
+        }
+
+        .flight-search {
+            background-image: linear-gradient(#15235F, #00c6fb 0%, #005bea 100%);
+            padding: 70px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .flight-search h1 {
+            margin-bottom: 30px;
+            margin-right: 100px;
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        /* Add this CSS to your existing styles */
+        .skills {
+            padding: 50px 0;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif; /* Add font-family */
+        }
+
+        .skills .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .skills h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color:#ooo; /* Change the color of the heading */
+        }
+
+        .skill {
+            margin-bottom: 40px;
+        }
+
+        .skill h3 {
+            font-size: 24px; /* Increase the font size for skill headings */
+            margin-bottom: 20px; /* Adjust spacing */
+            color: #000 /* Change the color of skill headings */
+        }
+
+        .skill h2 {
+            font-size: 20px; /* Increase the font size for other skills */
+            margin-bottom: 10px; /* Adjust spacing */
+            color: #000; /* Change the color of other skills */
+        }
+
+        .rating {
+            margin-bottom: 10px;
+        }
+
+        .rating span {
+            font-weight: bold;
+            color: #38E5ED; /* Change the color of rating labels */
+        }
+
+        .stars {
+            display: inline-block;
+        }
+
+        .star {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            margin-right: 5px;
+        }
+
+        /* Adjust the width of stars based on the rating */
+        .star.filled {
+            background-color: orange;
+        }
+
+        .featured-destinations {
+            padding: 40px 0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            border-radius: 50px 50px 0 0;
+            position: relative;
+            z-index: 2; /* Ensure featured destinations is above flight search */
+            margin-top: -50px; /* Adjust margin to overlap flight search */
+        }
+
+        /* Add these styles to your existing CSS */
+
+        .destination-card {
+            display: flex; /* Use flexbox */
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .destination-card img {
+            width: 40%; /* Adjust image width */
+            max-width: 300px;
+            height: auto;
+            margin-right: 20px; /* Add margin to separate image and content */
+            border-radius: 5px;
+        }
+
+        .destination-card-content {
+            flex: 1; /* Fill remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .destination-card h3 {
+            color: #000;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .destination-card p {
+            color: #555;
+            font-size: 1.5rem;
+            margin-top: 70px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            margin-left: 572px;
+            width: 120px;
+            height: 67px;
+        }
+
+        .footer-menu ul {
+            list-style: none;
+        }
+
+        .footer-menu ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .footer-menu a,
+        .footer-info p {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer-menu a:hover,
+        .footer-info p:hover {
+            color: #00f; /* Adjust link color on hover */
+        }
+
+        .footer-social-icons {
+            margin-top: 102px;
+            margin-right: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icons {
+            margin-left: 4px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li class="header-logo"><img src="C:\Users\Dayatri\Downloads\rit_logo.png"></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="container">
+        <div class="intro">
+            <h2>Hi all I am Ritika </h2><br>
+            <p>Highly-motivated third-year Computer Science and Engineering student, passionate about embracing new challenges and expanding my knowledge in the dynamic field of technology.
+
+                Skilled in front-end and back-end web development, I specialize in creating responsive layouts, implementing dynamic functionalities, and optimizing performance to ensure optimal user experiences. <br><br>I am actively honing my skills in Android app development, blockchain technology, and cybersecurity.
+
+                <br><br> I also find joy and fulfillment in exploring various artistic avenues. Dancing, writing poetry, sketching, and painting are among my cherished pursuits. 
+
+            </p><br>
+            <hr><br>
+            <a href="C:\Users\Dayatri\Downloads\RitikaResume.pdf" class="download-btn">Download CV</a>
+            <a href="https://wa.me/09136703366" class="download-btn">Join</a>
+        </div>
+        <div class="image-container">
+            <img src="C:\Users\Dayatri\Downloads\AboutMe.svg" alt="About Me Image">
+        </div>
+    </div>
+</section>
+
+<section id="flights" class="flight-search">
+    <div class="container">
+        <h1>Skills</h1>
+        <div class="skill">
+            <h3 style="color:red">Coding Skills</h3>
+            <div class="rating">
+                <span style="color:black">HTML:</span>
+                <div class="stars">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                </div>
+            </div>
+            <div class="rating">
+                <span style="color:black">CSS:</span>
+                <div class="stars">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                </div>
+            </div>
+            <div class="rating">
+                <span style="color:black">JavaScript:</span>
+                <div class="stars">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+
+                </div>
+            </div>
+            <div class="rating">
+                <span style="color:black">Python:</span>
+                <div class="stars">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                </div>
+            </div>
+        </div>
+        <div class="skill">
+            <h3 style="color:red">Other Skills</h3><br>
+            <h2>Poetry</h2>
+            <h2>Dancing</h2>
+            <h2>Painting</h2>
+            <h2>Sketching</h2>
+        </div>
+    </div>
+</section>
+
+<section id="destinations" class="featured-destinations">
+ <h1 style="text-align: center">Projects</h1>
+    <div class="container">
+        <div class="destination-card">
+            <img src="C:\Users\Dayatri\Pictures\Screenshots\restro.png">
+            <h3>Restaurent Website</h3>
+            <p>Created a multiple page restaurent website using HTML, CSS and Javascript</p>
+        </div>
+    </div>
+       <div class="destination-card">
+            <img src="C:\Users\Dayatri\Downloads\news.png">
+            <h3>News Scrape</h3>
+            <p>Created a news website using HTML, CSS, Javascript and scraped the news using python from relevant news websites.</p>
+        </div>
+
+       <div class="destination-card">
+            <img src="C:\Users\Dayatri\Downloads\horror.png">
+            <h3>Text-based Game</h3>
+            <p>Created a horror text-based adventure game using HTML, CSS and Javascript</p>
+        </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="C:\Users\Dayatri\Downloads\rit_logo.png" alt="company logo">
+        </div>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="#">Home |</a></li>
+                <li><a href="#">Contact |</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-info">
+        <p>&copy; 2024 rits123</p>
+        <p>Email: ritikapoojary003@gmail.com</p>
+    </div>
+</footer>
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz1QykS1tzG9_4YRn5PbpqE75iZxvQl_kkfasnTlIpteYQ9D-iFGgdgdr7_rCKfkE4ziA/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+msg.innerHTML="Message Sent Successfully"
+       setTimeout(function(){
+             msg.innerHTML=""
+       },5000)
+       form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+})
+</script>
+</body>
+</html>
