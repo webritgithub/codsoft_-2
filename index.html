@@ -93,14 +93,14 @@
             padding: 50px 0;
         }
 
-        .flight-search {
+        .skill-search {
             background-image: linear-gradient(#15235F, #00c6fb 0%, #005bea 100%);
             padding: 70px 0;
             text-align: center;
             color: #fff;
         }
 
-        .flight-search h1 {
+        .skill-search h1 {
             margin-bottom: 30px;
             margin-right: 100px;
             font-size: 2.5rem;
@@ -169,7 +169,7 @@
             background-color: orange;
         }
 
-        .featured-destinations {
+        .project {
             padding: 40px 0;
             background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
             border-radius: 50px 50px 0 0;
@@ -180,7 +180,7 @@
 
         /* Add these styles to your existing CSS */
 
-        .destination-card {
+        .project-card {
             display: flex; /* Use flexbox */
             border: 1px solid #ddd;
             padding: 20px;
@@ -192,33 +192,25 @@
             position: relative;
         }
 
-        .destination-card:hover {
+        .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
-        .destination-card img {
+        .project-card img {
             width: 40%; /* Adjust image width */
             max-width: 300px;
             height: auto;
             margin-right: 20px; /* Add margin to separate image and content */
             border-radius: 5px;
         }
-
-        .destination-card-content {
-            flex: 1; /* Fill remaining space */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .destination-card h3 {
+        .project-card h3 {
             color: #000;
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
-        .destination-card p {
+        .project-card p {
             color: #555;
             font-size: 1.5rem;
             margin-top: 70px;
@@ -317,7 +309,7 @@
     </div>
 </section>
 
-<section id="flights" class="flight-search">
+<section class="skill-search">
     <div class="container">
         <h1>Skills</h1>
         <div class="skill">
@@ -370,22 +362,22 @@
     </div>
 </section>
 
-<section id="destinations" class="featured-destinations">
+<section class="project">
  <h1 style="text-align: center">Projects</h1>
     <div class="container">
-        <div class="destination-card">
+        <div class="project-card">
             <img src="restro.png">
             <h3>Restaurent Website</h3>
             <p>Created a multiple page restaurent website using HTML, CSS and Javascript</p>
         </div>
     </div>
-       <div class="destination-card">
+       <div class="project-card">
             <img src="news.png">
             <h3>News Scrape</h3>
             <p>Created a news website using HTML, CSS, Javascript and scraped the news using python from relevant news websites.</p>
         </div>
 
-       <div class="destination-card">
+       <div class="project-card">
             <img src="horror.png">
             <h3>Text-based Game</h3>
             <p>Created a horror text-based adventure game using HTML, CSS and Javascript</p>
